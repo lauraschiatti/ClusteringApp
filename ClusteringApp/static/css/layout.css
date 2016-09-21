@@ -1,11 +1,18 @@
-body{
-  font-family: "HelveticaNeue-Light";
+body, h3{
+  font-family: "Varela Round", "HelveticaNeue-Light";
   letter-spacing: 0.5px;
 }
 
 .navbar, .navbar.navbar-default{
-  background-color: #757575;
+  background-color: #37474F;
   color: #EEEEEE;
+}
+
+.footer{
+  color: white;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #455A64;
 }
 
 /* Sticky footer styles
@@ -16,18 +23,18 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
+  height: 80px;
   vertical-align: middle;
 }
 
-/* Wizard styles
+/* Wizard styles http://bootsnipp.com/snippets/featured/form-wizard-using-tabs
 -------------------------------------------------- */
 .wizard {
     margin: 20px auto;
@@ -83,11 +90,11 @@ span.round-tab i{
 }
 .wizard li.active span.round-tab {
     background: #fff;
-    border: 2px solid #5bc0de;
+    border: 2px solid #26A69A;
 
 }
 .wizard li.active span.round-tab i{
-    color: #5bc0de;
+    color: #26A69A;
 }
 
 span.round-tab:hover {
@@ -107,10 +114,10 @@ span.round-tab:hover {
     margin: 0 auto;
     bottom: 0px;
     border: 5px solid transparent;
-    border-bottom-color: #5bc0de;
+    border-bottom-color: #26A69A;
     transition: 0.1s ease-in-out;
 }
-
+  
 .wizard li.active:after {
     content: " ";
     position: absolute;
@@ -119,7 +126,7 @@ span.round-tab:hover {
     margin: 0 auto;
     bottom: 0px;
     border: 10px solid transparent;
-    border-bottom-color: #5bc0de;
+    border-bottom-color: #26A69A;
 }
 
 .wizard .nav-tabs > li a {
@@ -130,9 +137,9 @@ span.round-tab:hover {
     padding: 0;
 }
 
-    .wizard .nav-tabs > li a:hover {
-        background: transparent;
-    }
+  .wizard .nav-tabs > li a:hover {
+      background: transparent;
+  }
 
 .wizard .tab-pane {
     position: relative;
@@ -167,4 +174,36 @@ span.round-tab:hover {
         position: absolute;
         left: 35%;
     }
+}
+
+.tab-content{
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* File preview http://bootsnipp.com/snippets/featured/input-file-popover-preview-image
+-------------------------------------------------- */
+.preview-input {
+    position: relative;
+	  overflow: hidden;
+    margin: 0px;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    padding: 0;
+}
+.preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.preview-input-title {
+    margin-left:2px;
 }

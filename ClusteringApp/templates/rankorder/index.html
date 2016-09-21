@@ -1,3 +1,184 @@
-<p>
-  Hola
-</p>
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Rank order
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<section>
+        <div class="wizard">
+            <div class="wizard-inner">
+                <div class="connecting-line"></div>
+                <ul class="nav nav-tabs" role="tablist">
+
+                    <li role="presentation" class="active">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-folder-open"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-zoom-in"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-picture"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <form role="form">
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="step1">
+                        <div class="col-md-10 col-md-offset-1">
+                          <div class="page-header">
+                              <h3>Subir archivo <small> / Seleccione archivo con conceptos débiles por estudiante</small></h3>
+                          </div>
+                          <br>
+                          <form class="form-horizontal">
+                             <div class="container">
+                                 <div class="row">
+                                     <div class="col-xs-12 col-md-6 col-sm-8">
+                                         <!-- preview-filename input [CUT FROM HERE]-->
+                                         <div class="input-group preview">
+                                             <span class="input-group-btn">
+                                                 <!-- preview-clear button -->
+                                                 <button type="button" class="btn btn-default preview-clear" style="display:none;">
+                                                     <span class="glyphicon glyphicon-remove"></span> Limpiar
+                                                 </button>
+                                                 <!-- preview-input -->
+                                                 <div class="btn btn-primary btn-raised preview-input">
+                                                     <span class="glyphicon glyphicon-folder-open"></span>
+                                                     <span class="preview-input-title"> Buscar</span>
+                                                     <input type="file" accept=".txt" name="input-file-preview"/> <!-- rename it -->
+                                                 </div>
+                                             </span>
+                                             <input type="text" class="form-control preview-filename" disabled="disabled">
+                                         </div><!-- /input-group preview [TO HERE]-->
+                                     </div>
+                                 </div>
+                             </div>
+
+                              <br>
+                              <div class="form-group">
+                                <div class="col-md-10 col-md-offset-2">
+                                  <ul class="list-inline pull-right">
+                                      <li><button type="button" class="btn btn-raised active">Cancelar</button></li>
+                                      <li><button type="button" class="btn btn-raised btn-primary">Siguiente</button></li>
+                                  </ul>
+                                </div>
+                              </div>
+                          </form>
+
+                          <div id="container"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step2">
+                        <h3>Previsualización de archivo</h3>
+                        <p>This is step 2</p>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step3">
+                        <h3>Step 3</h3>
+                        <p>This is step 3</p>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
+                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="complete">
+                        <h3>Complete</h3>
+                        <p>You have successfully completed all steps.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+   </div>
+   <br><br>
+</div>
+
+<script type="text/javascript">
+$(document).on('click', '#close-preview', function(){
+  $('.preview').popover('hide');
+  // Hover befor close the preview
+  $('.preview').hover(
+      function () {
+         $('.preview').popover('show');
+      },
+       function () {
+         $('.preview').popover('hide');
+      }
+  );
+});
+
+$(function() {
+  // Create the close button
+  var closebtn = $('<button/>', {
+      type:"button",
+      text: 'x',
+      id: 'close-preview',
+      style: 'font-size: initial;',
+  });
+  closebtn.attr("class","close pull-right");
+  // Set the popover default content
+  $('.preview').popover({
+      trigger:'manual',
+      html:true,
+      title: "<strong>Preview</strong>"+$(closebtn)[0].outerHTML,
+      content: "There's no image",
+      placement:'bottom'
+  });
+  // Clear event
+  $('.preview-clear').click(function(){
+      $('.preview').attr("data-content","").popover('hide');
+      $('.preview-filename').val("");
+      $('.preview-clear').hide();
+      $('.preview-input input:file').val("");
+      $(".preview-input-title").text("Browse");
+  });
+  // Create the preview
+  $(".preview-input input:file").change(function (){
+      var file = this.files[0];
+      var reader = new FileReader();
+      // Set preview into the popover data-content
+      reader.onload = function (event) {
+          $(".preview-input-title").text("Cambiar");
+          $(".preview-clear").show();
+          $(".preview-filename").val(file.name);
+
+           $file_content = file_get_contents(file);
+
+          var details = '<?php echo $file_content; ?>';
+          console.log(details);
+
+      }
+      reader.readAsText(file);
+  });
+});
+</script>
+{% endblock %}
