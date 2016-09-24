@@ -20,7 +20,7 @@ def upload_file(request):
                 form = UploadFileForm()
             else:
                 handle_uploaded_file(file)
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect('/rankorder/preview')
 
     else: # if a GET (or any other method) we'll create a blank form
         form = UploadFileForm()
@@ -34,3 +34,8 @@ def handle_uploaded_file(f):
     with open(filepath, 'wb+') as dest:
         for chunk in f.chunks():
             dest.write(chunk)"""
+
+def preview(request):
+    #send file data for preview
+    file = 'file'
+    return render(request, 'rankorder/preview.html', {'file': file})

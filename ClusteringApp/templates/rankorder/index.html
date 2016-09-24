@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Rank order
+  Subir archivo
 {% endblock %}
 
 {% block content %}
@@ -22,14 +22,14 @@
                     </li>
 
                     <li role="presentation" class="disabled">
-                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                        <a href="javascript::void(0)" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-zoom-in"></i>
                             </span>
                         </a>
                     </li>
                     <li role="presentation" class="disabled">
-                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                        <a href="javascript::void(0)" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-picture"></i>
                             </span>
@@ -37,7 +37,7 @@
                     </li>
 
                     <li role="presentation" class="disabled">
-                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                        <a href="javascript::void(0)" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-ok"></i>
                             </span>
@@ -69,11 +69,11 @@
                                      {% endif %}
                                      <div class="input-group preview">
                                          <span class="input-group-btn">
-                                             <button type="button" class="btn btn-default preview-clear" style="display:none;">
+                                             <button type="button" class="btn btn-sm btn-danger preview-clear" style="display:none;">
                                                  <span class="glyphicon glyphicon-remove"></span> Limpiar
                                              </button>
 
-                                             <div class="btn btn-primary btn-raised preview-input">
+                                             <div class="btn btn-default btn-raised btn-sm preview-input">
                                                  <span class="glyphicon glyphicon-folder-open"></span>
                                                  <span class="file"> Buscar</span>
 
@@ -91,8 +91,8 @@
                          <div class="form-group">
                            <div class="col-md-10 col-md-offset-2">
                              <ul class="list-inline pull-right">
-                                 <li><a href="/" class="btn btn-raised active">Cancelar</a></li>
-                                 <li><input type="submit" class="btn btn-raised btn-primary" value="SIGUIENTE"></li>
+                                 <li><a href="/" class="btn btn-md btn-raised active">Cancelar</a></li>
+                                 <li><input type="submit" class="btn btn-md btn-raised btn-primary" value="SIGUIENTE"></li>
                              </ul>
                            </div>
                          </div>
@@ -100,27 +100,6 @@
                     </div>
                 </div>
 
-                <div class="tab-pane" role="tabpanel" id="step2">
-                    <h3>Previsualización de archivo</h3>
-                    <p>This is step 2</p>
-                    <ul class="list-inline pull-right">
-                        <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                        <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
-                    </ul>
-                </div>
-                <div class="tab-pane" role="tabpanel" id="step3">
-                    <h3>Step 3</h3>
-                    <p>This is step 3</p>
-                    <ul class="list-inline pull-right">
-                        <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                        <li><button type="button" class="btn btn-default next-step">Skip</button></li>
-                        <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
-                    </ul>
-                </div>
-                <div class="tab-pane" role="tabpanel" id="complete">
-                    <h3>Complete</h3>
-                    <p>You have successfully completed all steps.</p>
-                </div>
                 <div class="clearfix"></div>
             </div>
 
@@ -129,67 +108,9 @@
    </div>
    <br><br>
 </div>
+{% endblock %}
 
-<script type="text/javascript">
-$(document).on('click', '#close-preview', function(){
-  $('.preview').popover('hide');
-  // Hover befor close the preview
-  $('.preview').hover(
-      function () {
-         $('.preview').popover('show');
-      },
-       function () {
-         $('.preview').popover('hide');
-      }
-  );
-});
-
-$(function() {
-  // Create the close button
-  var closebtn = $('<button/>', {
-      type:"button",
-      text: 'x',
-      id: 'close-preview',
-      style: 'font-size: initial;',
-  });
-  closebtn.attr("class","close pull-right");
-  // Set the popover default content
-  $('.preview').popover({
-      trigger:'manual',
-      html:true,
-      title: "<strong>Preview</strong>"+$(closebtn)[0].outerHTML,
-      content: "There's no image",
-      placement:'bottom'
-  });
-  // Clear event
-  $('.preview-clear').click(function(){
-      $('.preview').attr("data-content","").popover('hide');
-      $('.preview-filename').val("");
-      $('.preview-clear').hide();
-      $('.preview-input input:file').val("");
-      $(".preview-input-title").text("Browse");
-  });
-  // Create the preview
-  $(".preview-input input:file").change(function (){
-      var file = this.files[0];
-      var reader = new FileReader();
-      // Set preview into the popover data-content
-      reader.onload = function (event) {
-          $(".preview-input-title").text("Cambiar");
-          $(".preview-clear").show();
-          $(".preview-filename").val(file.name);
-
-           $file_content = file_get_contents(file);
-
-          var details = '<?php echo $file_content; ?>';
-          console.log(details);
-
-      }
-      reader.readAsText(file);
-  });
-});
-
-
-
-</script>
+{% block js %}
+  {% load staticfiles %}
+   <script type="text/javascript" src= "{% static 'js/rankorder/index.js' %}"></script>
 {% endblock %}
