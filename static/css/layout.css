@@ -4,7 +4,7 @@ body, h1, h2, h3, h5{
 }
 
 .navbar, .navbar.navbar-default{
-  background-color: #37474F;
+  background-color: #424242;
   color: #EEEEEE;
 }
 
@@ -12,7 +12,7 @@ body, h1, h2, h3, h5{
   color: white;
   padding: 12px;
   margin-top: 20px;
-  background-color: #455A64;
+  background-color: #424242;
 }
 
 /* Sticky footer styles
