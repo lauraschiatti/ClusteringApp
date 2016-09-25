@@ -33,8 +33,8 @@
               <ul class="nav navbar-nav navbar-right">
                   <!--{% block navbar %} {% endblock %}-->
                     <li><a href="/">Inicio</a></li>
-                    <li><a href="javascript::void(0)">Equipo</a></li>
-                    <li><a href="javascript::void(0)">Acerca de</a></li>
+                    <li><a href="/team/">Equipo</a></li>
+                    <li><a href="/about/">Acerca de</a></li>
                   <!--<li><a href="javascript::void(0)">
                           <i class="glyphicon glyphicon-log-out"></i>
                           <span>Cerrar sesión</span>
@@ -75,6 +75,7 @@
 
   <script type="text/javascript" src= "{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'lib/bootstrap-material-design/js/material.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/layout.js' %}"></script>
 
   {% block js %} {% endblock %}
 </body>
