@@ -1,4 +1,4 @@
-body, h3{
+body, h1, h2, h3, h5{
   font-family: "Varela Round", "HelveticaNeue-Light";
   letter-spacing: 0.5px;
 }
@@ -37,7 +37,6 @@ body {
 /* Wizard styles http://bootsnipp.com/snippets/featured/form-wizard-using-tabs
 -------------------------------------------------- */
 .wizard {
-    margin: 20px auto;
     background: #fff;
 }
 
@@ -90,11 +89,10 @@ span.round-tab i{
 }
 .wizard li.active span.round-tab {
     background: #fff;
-    border: 2px solid #26A69A;
-
+    border: 2px solid #333;
 }
 .wizard li.active span.round-tab i{
-    color: #26A69A;
+    color: #333;
 }
 
 span.round-tab:hover {
@@ -114,7 +112,7 @@ span.round-tab:hover {
     margin: 0 auto;
     bottom: 0px;
     border: 5px solid transparent;
-    border-bottom-color: #26A69A;
+    border-bottom-color: #333;
     transition: 0.1s ease-in-out;
 }
   
@@ -126,7 +124,7 @@ span.round-tab:hover {
     margin: 0 auto;
     bottom: 0px;
     border: 10px solid transparent;
-    border-bottom-color: #26A69A;
+    border-bottom-color: #333;
 }
 
 .wizard .nav-tabs > li a {

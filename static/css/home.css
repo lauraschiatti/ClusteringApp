@@ -1,0 +1,18 @@
+/* Glyphicons
+-------------------------------------------------- */
+span.glyphicon {
+    font-size: 3em;
+    margin: 8px 12px;
+}
+
+.green-color{
+    color:#4caf50;
+}
+
+.orange-color{
+    color:#ff5722;
+}
+
+.blue-color{
+    color: #03a9f4;
+}

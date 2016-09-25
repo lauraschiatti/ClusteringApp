@@ -4,82 +4,65 @@
   Previsualizar archivo
 {% endblock %}
 
+{% load staticfiles %}
+{% block css %}
+  <link rel=stylesheet href="{% static 'css/rankorder.css' %}" media="screen" title="no title" charset="utf-8">
+{% endblock %}
+
 {% block content %}
-<div class="container">
-	<div class="row">
-		<section>
-        <div class="wizard">
-            <div class="wizard-inner">
-                <div class="connecting-line"></div>
-                <ul class="nav nav-tabs" role="tablist">
+    <div class="wizard">
+        <div class="wizard-inner">
+            <div class="connecting-line"></div>
+            <ul class="nav nav-tabs" role="tablist">
 
-                    <li role="presentation" class="disabled">
-                        <a href="javascript::void(0)" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-folder-open"></i>
-                            </span>
-                        </a>
-                    </li>
+                <li role="presentation" class="disabled">
+                    <a href="javascript::void(0)" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                        <span class="round-tab">
+                            <i class="glyphicon glyphicon-folder-open"></i>
+                        </span>
+                    </a>
+                </li>
 
-                    <li role="presentation" class="active">
-                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-zoom-in"></i>
-                            </span>
-                        </a>
-                    </li>
-                    <li role="presentation" class="disabled">
-                        <a href="javascript::void(0)" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-picture"></i>
-                            </span>
-                        </a>
-                    </li>
+                <li role="presentation" class="active">
+                    <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                        <span class="round-tab">
+                            <i class="glyphicon glyphicon-zoom-in"></i>
+                        </span>
+                    </a>
+                </li>
+                <li role="presentation" class="disabled">
+                    <a href="javascript::void(0)" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                        <span class="round-tab">
+                            <i class="glyphicon glyphicon-picture"></i>
+                        </span>
+                    </a>
+                </li>
 
-                    <li role="presentation" class="disabled">
-                        <a href="javascript::void(0)" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-ok"></i>
-                            </span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                <li role="presentation" class="disabled">
+                    <a href="javascript::void(0)" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                        <span class="round-tab">
+                            <i class="glyphicon glyphicon-ok"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-            <div class="tab-content">
-                <div class="tab-pane active" role="tabpanel" id="step2">
-                    <div class="col-md-10 col-md-offset-1">
+        <div class="tab-content">
+            <div class="tab-pane active" role="tabpanel" id="step2">
+                <div class="col-md-10 col-md-offset-1">
                       <div class="page-header">
                           <h3>Previsualización de archivo</h3>
                       </div>
 
                       <br>
-                      <p>
-                        {{file}}
-                      </p>
 
-                      <br>
-
-                      <div class="form-group">
-                        <div class="col-md-10 col-md-offset-2">
-                          <ul class="list-inline pull-left">
-                              <li><a href="/" class="btn btn-md btn-only btn-raised active">Anterior</a></li>
-                              <li><a href="/" class="btn btn-md btn-raised active">Cancelar</a></li>
-                          </ul>
-                          <ul class="list-inline pull-right">
-                              <li><input type="submit" class="btn btn-md btn-raised btn-primary" value="SIGUIENTE"></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                        {{ file }}
                 </div>
-
-                <div class="clearfix"></div>
             </div>
 
+            <div class="clearfix"></div>
         </div>
-    </section>
-   </div>
+    </div>
    <br><br>
-</div>
 {% endblock %}
