@@ -3,6 +3,12 @@ body, h1, h2, h3, h5{
   letter-spacing: 0.5px;
 }
 
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
 .navbar, .navbar.navbar-default{
   background-color: #424242;
   color: #EEEEEE;
@@ -15,25 +21,6 @@ body, h1, h2, h3, h5{
   background-color: #424242;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 80px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 80px;
-  vertical-align: middle;
-}
-
 /* Wizard styles http://bootsnipp.com/snippets/featured/form-wizard-using-tabs
 -------------------------------------------------- */
 .wizard {
@@ -42,7 +29,7 @@ body {
 
 .wizard .nav-tabs {
     position: relative;
-    margin: 40px auto;
+    /*margin: 40px auto;*/
     margin-bottom: 0;
     border-bottom-color: #e0e0e0;
 }
@@ -84,6 +71,7 @@ span.round-tab {
     text-align: center;
     font-size: 25px;
 }
+
 span.round-tab i{
     color:#555555;
 }
@@ -135,9 +123,9 @@ span.round-tab:hover {
     padding: 0;
 }
 
-  .wizard .nav-tabs > li a:hover {
-      background: transparent;
-  }
+.wizard .nav-tabs > li a:hover {
+  background: transparent;
+}
 
 .wizard .tab-pane {
     position: relative;
@@ -148,12 +136,6 @@ span.round-tab:hover {
 }
 
 @media( max-width : 585px ) {
-
-    .wizard {
-        width: 90%;
-        height: auto !important;
-    }
-
     span.round-tab {
         font-size: 16px;
         width: 50px;
@@ -184,7 +166,7 @@ span.round-tab:hover {
 -------------------------------------------------- */
 .preview-input {
     position: relative;
-	  overflow: hidden;
+    overflow: hidden;
     margin: 0px;
     color: #333;
     background-color: #fff;
@@ -205,3 +187,26 @@ span.round-tab:hover {
 .preview-input-title {
     margin-left:2px;
 }
+
+/* Media queries
+-------------------------------------------------- */
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+
