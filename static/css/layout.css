@@ -103,7 +103,7 @@ span.round-tab:hover {
     border-bottom-color: #333;
     transition: 0.1s ease-in-out;
 }
-  
+
 .wizard li.active:after {
     content: " ";
     position: absolute;
@@ -209,4 +209,3 @@ span.round-tab:hover {
 @media only screen and (min-width : 1200px) {
 
 }
-

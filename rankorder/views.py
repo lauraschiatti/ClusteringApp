@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
+import shutil
+
 
 import os
 
@@ -29,12 +31,20 @@ def upload_file(request):
 #save file data on local file
 def handle_uploaded_file(f):
     BASE_DIR = os.path.dirname(os.path.abspath(__file__)) #path rankorder folder
+    BASE_DIR2 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    filepath2 = os.path.join(BASE_DIR2, 'static/')
     filepath = os.path.join(BASE_DIR, 'files/weakconcepts.txt')
     with open(filepath, 'wb+') as dest:
         for chunk in f.chunks():
             dest.write(chunk)
+    shutil.copy2(filepath, filepath2)
 
 def preview(request):
     #send file data for preview
-    file = 'file'
-    return render(request, 'rankorder/preview.html', {'file': file})
+
+    return render(request, 'rankorder/preview.html')
+
+def algorythm(request):
+    #Process data
+
+    return render(request, 'rankorder/algorythm.html')

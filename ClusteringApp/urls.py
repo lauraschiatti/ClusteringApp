@@ -26,4 +26,6 @@ urlpatterns = [
     url(r'^', include('rankorder.urls', namespace='rankorder')),
 
     url(r'^admin/', admin.site.urls),
+
+
 ]

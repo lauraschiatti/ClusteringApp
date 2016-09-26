@@ -23,14 +23,14 @@
                     </a>
                 </li>
 
-                <li role="presentation" class="active">
+                <li role="presentation" class="disabled">
                     <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
                         <span class="round-tab">
                             <i class="glyphicon glyphicon-zoom-in"></i>
                         </span>
                     </a>
                 </li>
-                <li role="presentation" class="disabled">
+                <li role="presentation" class="active">
                     <a href="javascript::void(0)" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
                         <span class="round-tab">
                             <i class="glyphicon glyphicon-picture"></i>
@@ -52,16 +52,14 @@
             <div class="tab-pane active" role="tabpanel" id="step2">
                 <div class="col-md-10 col-md-offset-1">
                       <div class="page-header">
-                          <h3>Previsualización de archivo</h3>
+                          <h3>Procesamiento de archivo</h3>
                       </div>
-
                       <br>
-                        <iframe src="/static/weakconcepts.txt" width="600" height="600"></iframe>
                         <div class="form-group">
                            <ul class="list-inline pull-right">
-                               <li><a href="/" class="btn btn-md btn-raised text-uppercase">Cancelar</a></li>
-                               <li><a href="/rankorder/file" class="btn btn-md btn-raised text-uppercase">Atrás</a></li>
-                               <li><a href="/rankorder/algorythm" class="btn btn-md btn-raised btn-success text-uppercase" >Siguiente</a></li>
+                               <li><a href="/rankorder/file" class="btn btn-md btn-raised text-uppercase">Cancelar</a></li>
+                               <li><a href="/rankorder/preview" class="btn btn-md btn-raised text-uppercase">Atrás</a></li>
+                               <li><a class="btn btn-md btn-raised btn-success text-uppercase" >Siguiente</a></li>
                            </ul>
                         </div>
                 </div>

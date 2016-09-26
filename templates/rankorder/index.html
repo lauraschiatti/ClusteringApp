@@ -74,18 +74,17 @@
                                      {{ form.file.errors }}
                                    </div>
                                 {% endif %}
-                                 <div class="input-group preview">
+                                <div class="input-group preview">
                                     <input type="text" class="form-control preview-filename" disabled="disabled">
                                     <span class="input-group-btn">
-                                        <!-- image-preview-clear button -->
                                         <button type="button" class="btn btn-sm btn-danger preview-clear" style="display:none;">
                                             <span class="glyphicon glyphicon-remove"></span> Limpiar
                                         </button>
-                                        <!-- image-preview-input -->
-                                        <div class="btn btn-default btn-sm preview-input">
+
+                                        <div class="btn btn-default btn-raised btn-sm preview-input">
                                             <span class="glyphicon glyphicon-folder-open"></span>
-                                            <span class="image-preview-input-title">Buscar</span>
-                                            <input type="file" accept="text/plain" name="input-file-preview"/> <!--required oninvalid="setCustomValidity('Campo obligatorio')"-->
+                                            <span class="file"> Buscar</span>
+                                            <input type="file" accept=".txt" name="file" required title="This field should not be left blank."/>
                                         </div>
                                     </span>
                                 </div>
@@ -97,7 +96,7 @@
 
                      <div class="form-group">
                         <ul class="list-inline pull-right">
-                            <li><a href="/" class="btn btn-md btn-raised active">Cancelar</a></li>
+                            <li><a href="/" class="btn btn-md btn-raised text-uppercase">Cancelar</a></li>
                             <li><input type="submit" class="btn btn-md btn-raised btn-success" value="SIGUIENTE"></li>
                         </ul>
                      </div>
