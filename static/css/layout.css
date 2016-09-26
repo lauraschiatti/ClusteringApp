@@ -1,10 +1,16 @@
-body, h3{
+body, h1, h2, h3, h5{
   font-family: "Varela Round", "HelveticaNeue-Light";
   letter-spacing: 0.5px;
 }
 
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
 .navbar, .navbar.navbar-default{
-  background-color: #37474F;
+  background-color: #424242;
   color: #EEEEEE;
 }
 
@@ -12,38 +18,18 @@ body, h3{
   color: white;
   padding: 12px;
   margin-top: 20px;
-  background-color: #455A64;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 80px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 80px;
-  vertical-align: middle;
+  background-color: #424242;
 }
 
 /* Wizard styles http://bootsnipp.com/snippets/featured/form-wizard-using-tabs
 -------------------------------------------------- */
 .wizard {
-    margin: 20px auto;
     background: #fff;
 }
 
 .wizard .nav-tabs {
     position: relative;
-    margin: 40px auto;
+    /*margin: 40px auto;*/
     margin-bottom: 0;
     border-bottom-color: #e0e0e0;
 }
@@ -85,16 +71,16 @@ span.round-tab {
     text-align: center;
     font-size: 25px;
 }
+
 span.round-tab i{
     color:#555555;
 }
 .wizard li.active span.round-tab {
     background: #fff;
-    border: 2px solid #26A69A;
-
+    border: 2px solid #333;
 }
 .wizard li.active span.round-tab i{
-    color: #26A69A;
+    color: #333;
 }
 
 span.round-tab:hover {
@@ -114,7 +100,7 @@ span.round-tab:hover {
     margin: 0 auto;
     bottom: 0px;
     border: 5px solid transparent;
-    border-bottom-color: #26A69A;
+    border-bottom-color: #333;
     transition: 0.1s ease-in-out;
 }
   
@@ -126,7 +112,7 @@ span.round-tab:hover {
     margin: 0 auto;
     bottom: 0px;
     border: 10px solid transparent;
-    border-bottom-color: #26A69A;
+    border-bottom-color: #333;
 }
 
 .wizard .nav-tabs > li a {
@@ -137,9 +123,9 @@ span.round-tab:hover {
     padding: 0;
 }
 
-  .wizard .nav-tabs > li a:hover {
-      background: transparent;
-  }
+.wizard .nav-tabs > li a:hover {
+  background: transparent;
+}
 
 .wizard .tab-pane {
     position: relative;
@@ -150,12 +136,6 @@ span.round-tab:hover {
 }
 
 @media( max-width : 585px ) {
-
-    .wizard {
-        width: 90%;
-        height: auto !important;
-    }
-
     span.round-tab {
         font-size: 16px;
         width: 50px;
@@ -186,7 +166,7 @@ span.round-tab:hover {
 -------------------------------------------------- */
 .preview-input {
     position: relative;
-	  overflow: hidden;
+    overflow: hidden;
     margin: 0px;
     color: #333;
     background-color: #fff;
@@ -207,3 +187,26 @@ span.round-tab:hover {
 .preview-input-title {
     margin-left:2px;
 }
+
+/* Media queries
+-------------------------------------------------- */
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+

@@ -13,6 +13,8 @@
 
     <link rel=stylesheet href="{% static 'css/layout.css' %}" media="screen" title="no title" charset="utf-8">
 
+    {% block css %} {% endblock %}
+
     <script type="text/javascript" src="{% static 'lib/jquery/jquery.min.js' %}"></script>
 </head>
 <body>
@@ -25,11 +27,14 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="javascript::void(0)">Clustering App</a>
+              <a class="navbar-brand" href="/">Clustering App</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right">
-                  {% block navbar %} {% endblock %}
+                  <!--{% block navbar %} {% endblock %}-->
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/team/">Equipo</a></li>
+                    <li><a href="/about/">Acerca de</a></li>
                   <!--<li><a href="javascript::void(0)">
                           <i class="glyphicon glyphicon-log-out"></i>
                           <span>Cerrar sesión</span>
@@ -52,18 +57,24 @@
       </div>
   </nav>
 
-   {% block content %} {% endblock %}
+  <div class="row">
+      <div class="col-md-10 col-md-offset-1 col-sm-12">
+          {% block content %} {% endblock %}
+      </div>
+  </div>
 
-   <footer class="footer">
+
+  <footer class="footer">
       <div class="container">
-          <p class="text-center">Desarrollada y Diseñada por Laura Schiatti Sisó y Cristian Franco Santamaria</p>
+          <p class="text-center">Desarrollada y Diseñada por Cristian Franco Santamaria y Laura Schiatti Sisó</p>
           <p class="text-center">© 2016 - Cartagena - Bolívar - Colombia. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+      </div>
+  </footer>
 
-   <script type="text/javascript" src= "{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
-   <script type="text/javascript" src="{% static 'lib/bootstrap-material-design/js/material.min.js' %}"></script>
+  <script type="text/javascript" src= "{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'lib/bootstrap-material-design/js/material.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/layout.js' %}"></script>
 
-   {% block js %} {% endblock %}
+  {% block js %} {% endblock %}
 </body>
 </html>

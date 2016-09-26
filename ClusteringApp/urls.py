@@ -20,6 +20,9 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.get_index),
+    url(r'team/', views.get_team),
+    url(r'about/', views.get_about),
+
     url(r'^', include('rankorder.urls', namespace='rankorder')),
 
     url(r'^admin/', admin.site.urls),

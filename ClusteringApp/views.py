@@ -1,8 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
 
-# Create your views here.
+
 def get_index(request):
-    template = loader.get_template('home.html')
-    return HttpResponse(template.render(request))
+    return render(request, 'home.html', {})
+
+def get_team(request):
+    return render(request, 'team.html', {})
+
+def get_about(request):
+    return render(request, 'about.html', {})
