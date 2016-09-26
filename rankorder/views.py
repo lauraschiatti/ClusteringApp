@@ -29,7 +29,6 @@ def upload_file(request):
 #save file data on local file
 def handle_uploaded_file(f):
     BASE_DIR = os.path.dirname(os.path.abspath(__file__)) #path rankorder folder
-    print "BASE_DIR", BASE_DIR
     filepath = os.path.join(BASE_DIR, 'files/weakconcepts.txt')
     with open(filepath, 'wb+') as dest:
         for chunk in f.chunks():
