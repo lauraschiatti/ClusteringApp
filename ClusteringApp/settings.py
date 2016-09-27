@@ -124,3 +124,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
+
+
+MEDIA_ROOT = 'files' #va a buscar la carpeta media y sacar de ahi los archivos
+MEDIA_URL = '/files/' #URL que se va a crear para traer los archivos
