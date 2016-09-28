@@ -10,18 +10,20 @@ from .forms import UploadFileForm
 
 #@csrf_protect
 def upload_file(request):
+    request.session['file'] = False #use session
     if request.method == 'POST':# if this is a POST request we need to process the form data
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             file = request.FILES['file']
-            name = file.name
+            #name = file.name
             content_type = file.content_type
-            size = file.size
+            #size = file.size
 
             if content_type != 'text/plain':
                 form = UploadFileForm()
             else:
                 handle_uploaded_file(file)
+                request.session['file'] = True #use session
                 return HttpResponseRedirect('/rankorder/preview')
 
     else: # if a GET (or any other method) we'll create a blank form
@@ -39,11 +41,23 @@ def handle_uploaded_file(f):
 
 
 def preview(request):
-    #send file data for preview
-
-    return render(request, 'rankorder/preview.html')
+    if request.session.get('file') == True: #verify session var to show preview or not
+        return render(request, 'rankorder/preview.html')
+    else:
+        return HttpResponseRedirect('/rankorder/file')
 
 def algorythm(request):
-    #Process data
+    if request.session.get('file') == True: #verify session var to show preview or not
+        return render(request, 'rankorder/algorythm.html')
+    else:
+        return HttpResponseRedirect('/rankorder/file')
 
-    return render(request, 'rankorder/algorythm.html')
+def graphs(request):
+    if request.session.get('file') == True: #verify session var to show preview or not
+        return render(request, 'rankorder/graphs.html')
+    else:
+        return HttpResponseRedirect('/rankorder/file')
+
+def final(request):
+    del request.session["file"]  # Clear item from the session:
+    return render(request, 'rankorder/final.html')
