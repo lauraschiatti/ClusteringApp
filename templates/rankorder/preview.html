@@ -39,7 +39,10 @@
 
 {% block tab_content %}
     <br>
-    <iframe src="/files/rankorder/weakconcepts.txt" width="600" height="600"></iframe>
+    <!-- 16:9 aspect ratio -->
+    <div class="embed-responsive embed-responsive-4by3">
+      <iframe class="embed-responsive-item" src="/files/rankorder/weakconcepts.txt" frameborder="1"></iframe>
+    </div>
     <div class="form-group">
        <ul class="list-inline pull-left">
          <li><a href="/" class="btn btn-md btn-raised text-uppercase">Cancelar</a></li>
