@@ -1,68 +1,44 @@
-{% extends "layout.html" %}
-
-{% block page_title %}
-  Subir archivo
-{% endblock %}
+{% extends "wizard.html" %}
 
 {% load staticfiles %}
+
+{% block page_title %}
+  Subir Archivo
+{% endblock %}
+
 {% block css %}
   <link rel=stylesheet href="{% static 'css/rankorder.css' %}" media="screen" title="no title" charset="utf-8">
 {% endblock %}
 
-{% block content %}
+{% block content_title %}
     <h3 class="text-center">
         Rank-Order Clustering Algorithm
         <!--<small class="text-muted">Para agrupar estudiantes</small>-->
     </h3>
-    <br>
-    <div class="wizard">
-        <div class="wizard-inner">
-            <div class="connecting-line"></div>
-            <ul class="nav nav-tabs" role="tablist">
+{% endblock %}
 
-                <li role="presentation" class="active">
-                    <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
-                        <span class="round-tab">
-                            <i class="glyphicon glyphicon-folder-open"></i>
-                        </span>
-                    </a>
-                </li>
+{% block class_tab1 %}
+    class="active"
+{% endblock %}
 
-                <li role="presentation" class="disabled">
-                    <a href="javascript::void(0)" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
-                        <span class="round-tab">
-                            <i class="glyphicon glyphicon-zoom-in"></i>
-                        </span>
-                    </a>
-                </li>
-                <li role="presentation" class="disabled">
-                    <a href="javascript::void(0)" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
-                        <span class="round-tab">
-                            <i class="glyphicon glyphicon-picture"></i>
-                        </span>
-                    </a>
-                </li>
+{% block class_tab2 %}
+    class="disabled"
+ {% endblock %}
 
-                <li role="presentation" class="disabled">
-                    <a href="javascript::void(0)" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
-                        <span class="round-tab">
-                            <i class="glyphicon glyphicon-ok"></i>
-                        </span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+{% block class_tab3 %}
+    class="disabled"
+{% endblock %}
 
-            <div class="tab-content">
-            <div class="tab-pane active" role="tabpanel" id="step1">
-                <div class="col-md-10 col-md-offset-1">
-                  <div class="page-header">
-                      <h3>Subir archivo <small> / Seleccione archivo con conceptos débiles por estudiante</small></h3>
-                  </div>
+{% block class_tab4 %}
+    class="disabled"
+{% endblock %}
 
-                  <br>
+{% block tab_title %}
+    Subir archivo <small> / Seleccione archivo con conceptos débiles por estudiante</small>
+{% endblock %}
 
-                  <form class="form-horizontal" method="POST"enctype="multipart/form-data">
+{% block tab_content %}
+    <form class="form-horizontal" method="POST"enctype="multipart/form-data">
                     {% csrf_token %}
                      <div class="container">
                          <div class="row">
@@ -103,15 +79,9 @@
                          </ul>
                      </div>
                   </form>
-                </div>
-            </div>
-
-            <div class="clearfix"></div>
-        </div>
-    </div>
 {% endblock %}
 
+
 {% block js %}
-  {% load staticfiles %}
    <script type="text/javascript" src= "{% static 'js/rankorder/index.js' %}"></script>
 {% endblock %}

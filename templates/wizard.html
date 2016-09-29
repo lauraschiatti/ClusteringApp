@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% block content_title %}{% endblock %}
+    <br>
+    <div class="wizard">
+        <div class="wizard-inner">
+            <div class="connecting-line"></div>
+            <ul class="nav nav-tabs" role="tablist">
+
+                <li role="presentation" {% block class_tab1 %} {% endblock %}>
+                    <a href="javascript::void(0)">
+                        <span class="round-tab">
+                            <i class="glyphicon glyphicon-folder-open"></i>
+                        </span>
+                    </a>
+                </li>
+
+                <li role="presentation" {% block class_tab2 %} {% endblock %}>
+                    <a href="javascript::void(0)">
+                        <span class="round-tab">
+                            <i class="glyphicon glyphicon-zoom-in"></i>
+                        </span>
+                    </a>
+                </li>
+                <li role="presentation" {% block class_tab3 %} {% endblock %}>
+                    <a href="javascript::void(0)">
+                        <span class="round-tab">
+                            <i class="glyphicon glyphicon-picture"></i>
+                        </span>
+                    </a>
+                </li>
+
+                <li role="presentation" {% block class_tab4 %} {% endblock %}>
+                    <a href="javascript::void(0)">
+                        <span class="round-tab">
+                            <i class="glyphicon glyphicon-ok"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-content">
+            <div class="tab-pane active" role="tabpanel">
+                <div class="col-md-10 col-md-offset-1">
+                      <div class="page-header">
+                          <h3>{% block tab_title %} {% endblock %}</h3>
+                      </div>
+
+                      {% block tab_content %}{% endblock %}
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+        </div>
+    </div>
+
+   <br><br>
+{% endblock %}

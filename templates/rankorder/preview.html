@@ -1,78 +1,53 @@
-{% extends "layout.html" %}
+{% extends "wizard.html" %}
+
+{% load staticfiles %}
 
 {% block page_title %}
   Previsualizar archivo
 {% endblock %}
 
-{% load staticfiles %}
 {% block css %}
   <link rel=stylesheet href="{% static 'css/rankorder.css' %}" media="screen" title="no title" charset="utf-8">
 {% endblock %}
 
-{% block content %}
-    <div class="wizard">
-        <div class="wizard-inner">
-            <div class="connecting-line"></div>
-            <ul class="nav nav-tabs" role="tablist">
-
-                <li role="presentation" class="disabled">
-                    <a href="javascript::void(0)" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
-                        <span class="round-tab">
-                            <i class="glyphicon glyphicon-folder-open"></i>
-                        </span>
-                    </a>
-                </li>
-
-                <li role="presentation" class="active">
-                    <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
-                        <span class="round-tab">
-                            <i class="glyphicon glyphicon-zoom-in"></i>
-                        </span>
-                    </a>
-                </li>
-                <li role="presentation" class="disabled">
-                    <a href="javascript::void(0)" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
-                        <span class="round-tab">
-                            <i class="glyphicon glyphicon-picture"></i>
-                        </span>
-                    </a>
-                </li>
-
-                <li role="presentation" class="disabled">
-                    <a href="javascript::void(0)" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
-                        <span class="round-tab">
-                            <i class="glyphicon glyphicon-ok"></i>
-                        </span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="tab-content">
-            <div class="tab-pane active" role="tabpanel" id="step2">
-                <div class="col-md-10 col-md-offset-1">
-                      <div class="page-header">
-                          <h3>Previsualización de archivo</h3>
-                      </div>
-
-                      <br>
-                        <iframe src="/files/rankorder/weakconcepts.txt" width="600" height="600"></iframe>
-                        <div class="form-group">
-                           <ul class="list-inline pull-left">
-                             <li><a href="/" class="btn btn-md btn-raised text-uppercase">Cancelar</a></li>
-                           </ul>
-                           <ul class="list-inline pull-right">
-                               <li><a href="/rankorder/file" class="btn btn-md btn-raised text-uppercase">Atrás</a></li>
-                               <li><a href="/rankorder/algorythm" class="btn btn-md btn-raised btn-success text-uppercase" >Siguiente</a></li>
-                           </ul>
-                        </div>
-                </div>
-            </div>
-
-            <div class="clearfix"></div>
-
-        </div>
-    </div>
-
-   <br><br>
+{% block content_title %}
+    <h3 class="text-center">
+        Rank-Order Clustering Algorithm
+        <!--<small class="text-muted">Para agrupar estudiantes</small>-->
+    </h3>
 {% endblock %}
+
+{% block class_tab1 %}
+    class="disabled"
+{% endblock %}
+
+{% block class_tab2 %}
+    class="active"
+ {% endblock %}
+
+{% block class_tab3 %}
+    class="disabled"
+{% endblock %}
+
+{% block class_tab4 %}
+    class="disabled"
+{% endblock %}
+
+{% block tab_title %}
+    Previsualización de archivo
+{% endblock %}
+
+{% block tab_content %}
+    <br>
+    <iframe src="/files/rankorder/weakconcepts.txt" width="600" height="600"></iframe>
+    <div class="form-group">
+       <ul class="list-inline pull-left">
+         <li><a href="/" class="btn btn-md btn-raised text-uppercase">Cancelar</a></li>
+       </ul>
+       <ul class="list-inline pull-right">
+           <li><a href="/rankorder/file" class="btn btn-md btn-raised text-uppercase">Atrás</a></li>
+           <li><a href="/rankorder/algorythm" class="btn btn-md btn-raised btn-success text-uppercase" >Siguiente</a></li>
+       </ul>
+    </div>
+{% endblock %}
+
