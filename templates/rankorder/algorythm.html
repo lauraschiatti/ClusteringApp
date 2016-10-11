@@ -39,7 +39,42 @@
 
 {% block tab_content %}
     <br>
-    
+    <p>
+      <strong class="text-muted">Paso 1:</strong> Calcular pesos Wi de las <strong>n</strong> filas y ordenarlas de forma ascendente de acuerdo al peso.
+    </p>
+
+    <div class="block row table-responsive">
+      <table class="table table-bordered table-hover text-center">
+        <tbody>
+          <tr class="danger">
+            <td class="text-muted"><strong>Binarios</strong></td>
+            {% for cell in binaryArrayString %}
+              <td>2<sup>{{ cell }}</sup></td>
+            {% endfor %}
+          </tr>
+
+          {% for matrix, linesWeightArray, linesPows in data %}
+            <tr>
+              {% for cell in matrix %}
+                <td class="warning">{{ cell }}</td>
+              {% endfor %}
+              <td class="info">
+                {% for pow in linesPows %}
+                  {% if not forloop.last %}
+                    2<sup>{{ pow }} </sup>  +
+                  {% else %}
+                    2<sup>{{ pow }}</sup> =
+                  {% endif %}
+                {% endfor %}
+                <strong> {{ linesWeightArray }}</strong>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+
     <div class="form-group">
          <ul class="list-inline pull-left">
            <li><a href="/" class="btn btn-md btn-raised text-uppercase">Cancelar</a></li>

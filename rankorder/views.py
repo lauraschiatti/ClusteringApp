@@ -1,12 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from django.template import loader
-import shutil
-
 
 import os
 
 from .forms import UploadFileForm
+
+from .rankorder import *
 
 #@csrf_protect
 def upload_file(request):
@@ -48,7 +47,18 @@ def preview(request):
 
 def algorythm(request):
     if request.session.get('file') == True: #verify session var to show preview or not
-        return render(request, 'rankorder/algorythm.html')
+
+        #Rank Order Algorithm: Step by Step
+        matrix = get_data_from_file() #data file
+
+        binaryArray, binaryArrayString, linesWeightArray, linesPows = reorder_matrix_lines(matrix)
+
+        linesWeightArray.insert(0, "Wi") #insert at the beginning
+        linesPows.insert(0, "") #insert at the beginning
+
+        data = zip(matrix, linesWeightArray, linesPows) #iterate multiple lists
+
+        return render(request, 'rankorder/algorythm.html', {'data': data, 'binaryArrayString': binaryArrayString, 'orderedMatrix': orderedMatrix})
     else:
         return HttpResponseRedirect('/rankorder/file')
 

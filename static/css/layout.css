@@ -1,13 +1,13 @@
 body, h1, h2, h3, h5{
   font-family: "Varela Round", "HelveticaNeue-Light";
   letter-spacing: 0.5px;
+
 }
 
 .row {
     margin-right: 0;
     margin-left: 0;
 }
-
 
 .navbar, .navbar.navbar-default{
   background-color: #424242;
@@ -187,6 +187,33 @@ span.round-tab:hover {
 .preview-input-title {
     margin-left:2px;
 }
+
+/* Algorythm step by step
+-------------------------------------------------- */
+.block {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 0.9em;
+  border-left: 5px solid #eee;
+}
+
+.table > tbody > tr.danger > td{
+  background-color: #ffcd96;
+}
+
+.table-hover > tbody > tr.danger:hover > td{
+  background-color: #ffcd96;
+}
+
+.table > tbody > tr > td.info{
+  background-color: #003268;
+  color: white;
+}
+
+.table-hover > tbody > tr:hover > .info{
+  color: black;
+}
+
 
 /* Media queries
 -------------------------------------------------- */
