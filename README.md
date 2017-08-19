@@ -1,12 +1,12 @@
 # CLusteringApp
 
-Aplicación para clusterizar estudiantes con conceptos débiles similares utilizando diferentes técnicas. Trabajo de Grado de estudiantes de la Universidad Tecnológica de Bolívar.
+Aplicación para clusterizar estudiantes con conceptos débiles similares utilizando diferentes técnicas. Trabajo de Grado de estudiante de la Universidad Tecnológica de Bolívar.
 
 ## Tecnológias usadas
 
-- Django (Python)
-- CSS y JS
-- HTML5
+- Django v1.10.1
+- Bootstrap v3.3.7
+- jQuery v3.1.0 
 
 ## Desarrollador
 
