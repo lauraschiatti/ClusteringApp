@@ -8,9 +8,8 @@ Aplicación para clusterizar estudiantes con conceptos débiles similares utiliz
 - CSS y JS
 - HTML5
 
-## Desarrolladores
+## Desarrollador
 
 - Laura Schiatti Sisó
-- Cristian Franco Santamaría
 
 Programa de Ingeniería de Sistemas - [Universidad Tecnológica de Bolívar](http://www.unitecnologica.edu.co/)
