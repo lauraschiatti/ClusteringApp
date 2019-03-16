@@ -1,6 +1,7 @@
 # CLusteringApp
 
-Aplicación para clusterizar estudiantes con conceptos débiles similares utilizando diferentes técnicas. Trabajo de Grado de estudiante de la Universidad Tecnológica de Bolívar.
+Aplicación para clusterizar estudiantes con conceptos débiles similares utilizando diferentes técnicas. Trabajo de Grado: ESTUDIO COMPARATIVO DE DIFERENTES ALGORITMOS DE CLUSTERING PARA LA ESTIMACIÓN DE GRUPOS DE EVALUADOS QUE COMPARTEN DEBILIDADES CONCEPTUALES SIMILARES
+
 
 ## Tecnológias usadas
 
